@@ -1,0 +1,1 @@
+import {NextResponse} from "next/server";import {get} from "@/lib/store";export async function GET(_:Request,{params}:{params:{id:string}}){const x=await get(params.id);return x?NextResponse.json(x):NextResponse.json({error:"Not found"},{status:404})}
